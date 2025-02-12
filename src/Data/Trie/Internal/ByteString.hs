@@ -6,10 +6,10 @@
 {-# LANGUAGE Trustworthy #-}
 #endif
 ------------------------------------------------------------
---                                              ~ 2022.02.27
+--                                              ~ 2025-02-11
 -- |
 -- Module      :  Data.Trie.Internal.ByteString
--- Copyright   :  2008--2023 wren romano
+-- Copyright   :  2008--2025 wren romano
 -- License     :  BSD-3-Clause
 -- Maintainer  :  wren@cpan.org
 -- Stability   :  stable
@@ -29,7 +29,7 @@ module Data.Trie.Internal.ByteString
 import qualified Data.ByteString          as S
 import qualified Data.ByteString.Internal as S
 #if MIN_VERSION_bytestring(0,11,5)
-import qualified Foreign.Marshal.Utils    as F
+import qualified Foreign.Marshal.Utils    as FMU
 #endif
 import Data.ByteString.Internal (ByteString(PS))
 import Data.Word
@@ -59,7 +59,7 @@ memcpy :: Ptr Word8 -> Ptr Word8 -> Int -> IO ()
 #if MIN_VERSION_bytestring(0,11,5)
 -- This is the version when 'S.memcpy' got deprecated, though it
 -- still exists at least through 0.12.2.0.
-memcpy = F.copyBytes
+memcpy = FMU.copyBytes
 #else
 memcpy = S.memcpy
 #endif

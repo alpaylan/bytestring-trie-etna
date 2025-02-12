@@ -17,10 +17,10 @@
 {-# LANGUAGE Trustworthy #-}
 #endif
 ------------------------------------------------------------
---                                              ~ 2023.03.19
+--                                              ~ 2025-02-11
 -- |
 -- Module      :  Data.Trie.Internal
--- Copyright   :  2008--2023 wren romano
+-- Copyright   :  2008--2025 wren romano
 -- License     :  BSD-3-Clause
 -- Maintainer  :  wren@cpan.org
 -- Stability   :  experimental

@@ -4,10 +4,10 @@
 {-# LANGUAGE Safe #-}
 #endif
 ----------------------------------------------------------------
---                                                  ~ 2021.12.14
+--                                                  ~ 2025-02-11
 -- |
 -- Module      :  Data.Trie.Convenience
--- Copyright   :  2008--2023 wren romano
+-- Copyright   :  2008--2025 wren romano
 -- License     :  BSD-3-Clause
 -- Maintainer  :  wren@cpan.org
 -- Stability   :  provisional
@@ -50,7 +50,8 @@ import Data.Trie
 import Data.Trie.Internal (lookupBy_, alterBy_)
 import Data.ByteString    (ByteString)
 import Data.List          (sortBy)
-#if !(MIN_VERSION_base(4,6,0))
+#if !(MIN_VERSION_base(4,20,0))
+-- [aka GHC 9.10.1]: 'foldl'' re-exported from "Prelude".
 import Data.List          (foldl')
 #endif
 import Data.Ord           (comparing)
