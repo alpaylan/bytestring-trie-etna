@@ -49,7 +49,10 @@ module Data.Trie.Convenience
 import Data.Trie
 import Data.Trie.Internal (lookupBy_, alterBy_)
 import Data.ByteString    (ByteString)
-import Data.List          (foldl', sortBy)
+import Data.List          (sortBy)
+#if !(MIN_VERSION_base(4,6,0))
+import Data.List          (foldl')
+#endif
 import Data.Ord           (comparing)
 
 ----------------------------------------------------------------

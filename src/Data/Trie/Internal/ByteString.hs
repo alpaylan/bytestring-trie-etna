@@ -28,6 +28,9 @@ module Data.Trie.Internal.ByteString
 
 import qualified Data.ByteString          as S
 import qualified Data.ByteString.Internal as S
+#if !(MIN_VERSION_bytestring(0,11,5))
+import qualified Foreign.Marshal.Utils    as F
+#endif
 import Data.ByteString.Internal (ByteString(PS))
 import Data.Word
 import Foreign.ForeignPtr       (ForeignPtr)
@@ -52,6 +55,14 @@ unsafeWithForeignPtr :: ForeignPtr a -> (Ptr a -> IO b) -> IO b
 unsafeWithForeignPtr = withForeignPtr
 #endif
 
+memcpy :: Ptr Word8 -> Ptr Word8 -> Int -> IO ()
+#if MIN_VERSION_bytestring(0,11,5)
+-- This is the version when 'S.memcpy' got deprecated, though it
+-- still exists at least through 0.12.2.0.
+memcpy = F.copyBytes
+#else
+memcpy = S.memcpy
+#endif
 
 ------------------------------------------------------------
 ------------------------------------------------------------
@@ -328,7 +339,7 @@ toStrict = \cs0 -> goLen0 cs0 cs0
     goCopy (cs :+> PS fp off len) !ptr =
         unsafeWithForeignPtr fp $ \p -> do
             let ptr' = ptr `ptrElemOff` negate len
-            S.memcpy ptr' (p `ptrElemOff` off) len
+            memcpy ptr' (p `ptrElemOff` off) len
             goCopy cs ptr'
 
 ------------------------------------------------------------
