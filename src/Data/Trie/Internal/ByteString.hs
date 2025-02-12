@@ -28,7 +28,7 @@ module Data.Trie.Internal.ByteString
 
 import qualified Data.ByteString          as S
 import qualified Data.ByteString.Internal as S
-#if !(MIN_VERSION_bytestring(0,11,5))
+#if MIN_VERSION_bytestring(0,11,5)
 import qualified Foreign.Marshal.Utils    as F
 #endif
 import Data.ByteString.Internal (ByteString(PS))

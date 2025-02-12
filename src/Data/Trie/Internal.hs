@@ -650,8 +650,8 @@ showTrie t = shows' id t ""
     shows' _  Empty            = (".\n"++)
     shows' ss (Branch p m l r) =
         let s'  = ("--"++) . shows p . (","++) . shows m . ("-+"++)
-            -- TODO: GHC-9.10 warns about 'tail' being a partial function.
-            ss' = ss . (tail (spaces s') ++)
+            -- NOTE: GHC-9.10 warns about 'tail' being a partial function.
+            ss' = ss . (drop 1 (spaces s') ++)
         in s'              . shows' (ss' . ("|"++)) l
            . ss' . ("|\n"++)
            . ss' . ("`"++) . shows' (ss' . (" "++)) r
