@@ -1,0 +1,27 @@
+diff --git a/.gitignore b/.gitignore
+index ab6d4ab..64c4fd8 100644
+--- a/.gitignore
++++ b/.gitignore
+@@ -35,3 +35,9 @@ stack.yaml
+ *~
+ *#
+ .#*
++
++# etna runner
++.hegel/
++progress.jsonl
++etna.log
++
+diff --git a/src/Data/Trie.hs b/src/Data/Trie.hs
+index 2c733b9..691a8a4 100644
+--- a/src/Data/Trie.hs
++++ b/src/Data/Trie.hs
+@@ -176,7 +176,7 @@ delete = alterBy_ (\_ t -> (Nothing, t))
+ -- @since 0.2.6
+ deleteSubmap :: ByteString -> Trie a -> Trie a
+ {-# INLINE deleteSubmap #-}
+-deleteSubmap = alterBy_ (\_ _ -> (Nothing, empty))
++deleteSubmap = alterBy_ (\_ t -> (Nothing, t))
+ 
+ 
+ {---------------------------------------------------------------

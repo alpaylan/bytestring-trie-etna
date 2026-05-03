@@ -1,0 +1,13 @@
+diff --git a/src/Data/Trie/Internal.hs b/src/Data/Trie/Internal.hs
+index 99b996f..2de3823 100644
+--- a/src/Data/Trie/Internal.hs
++++ b/src/Data/Trie/Internal.hs
+@@ -2217,7 +2217,7 @@ mergeMaybe :: (a -> a -> Maybe a) -> Maybe a -> Maybe a -> Maybe a
+ {-# INLINE mergeMaybe #-}
+ mergeMaybe _ Nothing      Nothing  = Nothing
+ mergeMaybe _ Nothing mv1@(Just _)  = mv1
+-mergeMaybe _ mv0@(Just _) Nothing  = mv0
++mergeMaybe _    (Just _) Nothing   = Nothing
+ mergeMaybe f (Just v0)   (Just v1) = f v0 v1
+ 
+ 

@@ -1,0 +1,23 @@
+{"stage": "discover", "event": "subtree_filtered", "haskell_files_kept": 6, "c_ffi_files_dropped": 0, "cabal_only_dropped": 0, "ts": "2026-05-02T07:56:13.065199+00:00"}
+{"stage": "discover", "event": "candidates_picked", "count": 3, "ts": "2026-05-02T07:56:13.065199+00:00"}
+{"stage": "atomize", "event": "property_synthesized", "property": "MergeByLeftBiased", "category": "invariant", "ts": "2026-05-02T07:56:13.065199+00:00"}
+{"stage": "atomize", "event": "generators_synthesized", "property": "MergeByLeftBiased", "quickcheck": true, "hedgehog": true, "falsify": true, "smallcheck": true, "ts": "2026-05-02T07:56:13.065199+00:00"}
+{"stage": "atomize", "event": "property_synthesized", "property": "DeleteSubmapRemovesAllPrefixed", "category": "invariant", "ts": "2026-05-02T07:56:13.065199+00:00"}
+{"stage": "atomize", "event": "generators_synthesized", "property": "DeleteSubmapRemovesAllPrefixed", "quickcheck": true, "hedgehog": true, "falsify": true, "smallcheck": true, "ts": "2026-05-02T07:56:13.065199+00:00"}
+{"stage": "atomize", "event": "variant_committed", "variant": "mergeby_arg_order_68ef3934_1", "ts": "2026-05-02T07:56:13.065199+00:00"}
+{"stage": "atomize", "event": "variant_committed", "variant": "delete_submap_keeps_children_c7caacad_1", "ts": "2026-05-02T07:56:13.065199+00:00"}
+{"stage": "atomize", "event": "variant_committed", "variant": "merge_maybe_drops_left_only_10bfe2dd_1", "ts": "2026-05-02T07:56:13.065199+00:00"}
+{"stage": "runner", "event": "cabal_build_done", "ghc_version": "9.6.6", "ts": "2026-05-02T07:56:13.065199+00:00"}
+{"stage": "validate", "event": "backend_passed", "backend": "quickcheck", "property": "MergeByLeftBiased", "variant": "mergeby_arg_order_68ef3934_1", "ts": "2026-05-02T07:56:13.065199+00:00"}
+{"stage": "validate", "event": "backend_passed", "backend": "hedgehog", "property": "MergeByLeftBiased", "variant": "mergeby_arg_order_68ef3934_1", "ts": "2026-05-02T07:56:13.065199+00:00"}
+{"stage": "validate", "event": "backend_passed", "backend": "falsify", "property": "MergeByLeftBiased", "variant": "mergeby_arg_order_68ef3934_1", "ts": "2026-05-02T07:56:13.065199+00:00"}
+{"stage": "validate", "event": "backend_timed_out", "backend": "smallcheck", "property": "MergeByLeftBiased", "variant": "mergeby_arg_order_68ef3934_1", "seconds": 4, "ts": "2026-05-02T07:56:13.065199+00:00"}
+{"stage": "validate", "event": "backend_passed", "backend": "quickcheck", "property": "DeleteSubmapRemovesAllPrefixed", "variant": "delete_submap_keeps_children_c7caacad_1", "ts": "2026-05-02T07:56:13.065199+00:00"}
+{"stage": "validate", "event": "backend_passed", "backend": "hedgehog", "property": "DeleteSubmapRemovesAllPrefixed", "variant": "delete_submap_keeps_children_c7caacad_1", "ts": "2026-05-02T07:56:13.065199+00:00"}
+{"stage": "validate", "event": "backend_passed", "backend": "falsify", "property": "DeleteSubmapRemovesAllPrefixed", "variant": "delete_submap_keeps_children_c7caacad_1", "ts": "2026-05-02T07:56:13.065199+00:00"}
+{"stage": "validate", "event": "backend_timed_out", "backend": "smallcheck", "property": "DeleteSubmapRemovesAllPrefixed", "variant": "delete_submap_keeps_children_c7caacad_1", "seconds": 4, "ts": "2026-05-02T07:56:13.065199+00:00"}
+{"stage": "validate", "event": "backend_passed", "backend": "quickcheck", "property": "MergeByLeftBiased", "variant": "merge_maybe_drops_left_only_10bfe2dd_1", "ts": "2026-05-02T07:56:13.065199+00:00"}
+{"stage": "validate", "event": "backend_passed", "backend": "hedgehog", "property": "MergeByLeftBiased", "variant": "merge_maybe_drops_left_only_10bfe2dd_1", "ts": "2026-05-02T07:56:13.065199+00:00"}
+{"stage": "validate", "event": "backend_passed", "backend": "falsify", "property": "MergeByLeftBiased", "variant": "merge_maybe_drops_left_only_10bfe2dd_1", "ts": "2026-05-02T07:56:13.065199+00:00"}
+{"stage": "validate", "event": "backend_timed_out", "backend": "smallcheck", "property": "MergeByLeftBiased", "variant": "merge_maybe_drops_left_only_10bfe2dd_1", "seconds": 4, "ts": "2026-05-02T07:56:13.065199+00:00"}
+{"stage": "validate", "event": "all_checks_passed", "variants": 3, "tasks": 12, "ts": "2026-05-02T07:56:13.065199+00:00"}

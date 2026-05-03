@@ -1,0 +1,13 @@
+diff --git a/src/Data/Trie/Internal.hs b/src/Data/Trie/Internal.hs
+index 99b996f..af4ac8f 100644
+--- a/src/Data/Trie/Internal.hs
++++ b/src/Data/Trie/Internal.hs
+@@ -2163,7 +2163,7 @@ mergeBy f = start
+     start (Arc k0 (Just v0) s0) (Arc k1 (Just v1) s1) | S.null k0 && S.null k1
+                                                = mayEpsilon (f v0 v1) (go s0 s1)
+     start (Arc k0 (Just v0) s0) t1 | S.null k0 = epsilon v0 (go s0 t1)
+-    start t0 (Arc k1 (Just v1) s1) | S.null k1 = epsilon v1 (go t0 s1)
++    start t0 (Arc k1 (Just v1) s1) | S.null k1 = epsilon v1 (go s1 t0)
+     start t0 t1                                = go t0 t1
+ 
+     -- | The main recursion
