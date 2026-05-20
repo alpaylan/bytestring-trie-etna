@@ -41,3 +41,8 @@ stack.yaml
 /progress.jsonl
 /dist-newstyle/
 /etna/dist-newstyle/
+
+# etna runtime artifacts (auto-added)
+/coverage/
+*.profraw
+/profdata/
